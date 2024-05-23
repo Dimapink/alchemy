@@ -8,8 +8,9 @@ Session = sessionmaker(engine)
 Base = declarative_base()
 
 
-def create_tables():
-    with Session() as s:
-        Base.metadata.create_all(engine)
-
-
+class Database:
+    @staticmethod
+    def create_tables():
+        with Session():
+            Base.metadata.drop_all(engine)
+            Base.metadata.create_all(engine)

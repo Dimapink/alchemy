@@ -12,7 +12,8 @@ class Publishers(Base):
 
     id: Mapped[int_pk]
     name: Mapped[str]
-
+    def __str__(self):
+        return f"{self.id}: {self.name}"
 
 class Shop(Base):
     __tablename__ = "shops"

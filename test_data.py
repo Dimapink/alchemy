@@ -6,8 +6,6 @@ from models import Publishers, Book, Stock, Shop, Sale
 def fill_test_data():
     with open("tests_data.json", "r") as file:
         test_data = json.load(file)
-        print(test_data)
-
         model_to_test_data = {"publisher": Publishers,
                               "shop": Shop,
                               "book": Book,
